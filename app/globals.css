@@ -1,13 +1,55 @@
 @import "tailwindcss";
-
+@custom-variant dark (&:where(.dark, .dark *));
 @theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.5rem;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5rem;
+  --text-base: 1rem;
+  --text-base--line-height: 1.75rem;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 2rem;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 2rem;
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: 2.25rem;
+  --text-4xl: 2rem;
+  --text-4xl--line-height: 2.5rem;
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 3.5rem;
+  --text-6xl: 3.75rem;
+  --text-6xl--line-height: 1;
+  --text-7xl: 4.5rem;
+  --text-7xl--line-height: 1;
+  --text-8xl: 6rem;
+  --text-8xl--line-height: 1;
+  --text-9xl: 8rem;
+  --text-9xl--line-height: 1;
+  --color-foreground: hsl(var(--foreground));
+  --ease-slow: cubic-bezier(0.405, 0, 0.025, 1);
+  --ease-minor-spring: cubic-bezier(0.18, 0.89, 0.82, 1.04);
 }
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --header-blur-opacity: 0;
+  --header-border-opacity: 0;
+}
+@layer components {
+  .header-blur-background {
+    @apply absolute inset-0 -z-10 transition-all duration-300;
+  }
+
+  .header-blur-background.active {
+    @apply bg-white/80 backdrop-blur-md border-zinc-200/50 dark:bg-zinc-900/80 dark:border-zinc-700/50;
+  }
+}
+
+.dark .header-blur-background.active {
+  background-color: rgba(24, 24, 27, 0.8);
+  border-color: rgba(63, 63, 70, 0.5);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,9 +58,13 @@
     --foreground: #ededed;
   }
 }
+@layer base {
+  .dark {
+    color-scheme: dark;
+  }
+}
 
 body {
   color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
