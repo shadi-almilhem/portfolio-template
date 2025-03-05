@@ -11,7 +11,6 @@ import {
   XIcon,
 } from "@/app/components/SocialIcons";
 import BlurFade from "../components/blur-fade";
-
 function SocialLink({ className, href, children, icon: Icon }: any) {
   return (
     <li
@@ -43,9 +42,17 @@ function MailIcon(props: any) {
 }
 
 export const metadata = {
-  title: "About",
-  description:
-    "I'm Spencer Sharp. I live in New York City, where I design the future.",
+  title: `About | ${content.name}`,
+  description: `Learn more about ${content.name}, a ${content.roleDescription}. Discover their background and story.`,
+  keywords: `about, biography, ${content.name}, ${content.roleDescription}`,
+  openGraph: {
+    title: `About | ${content.name}`,
+    description: `Learn more about ${content.name}, a ${content.roleDescription}. Discover their background and story.`,
+  },
+  twitter: {
+    title: `About | ${content.name}`,
+    description: `Learn more about ${content.name}, a ${content.roleDescription}. Discover their background and story.`,
+  },
 };
 
 export default function About() {

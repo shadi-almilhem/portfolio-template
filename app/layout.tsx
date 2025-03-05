@@ -17,11 +17,13 @@ const dm_sans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: content.name,
-  description: content.roleDescription,
+  title: `${content.name} - ${content.roleDescription}`,
+  description: `${content.name}, ${content.roleDescription}. Explore my portfolio, blog, and learn more about my skills.`,
+  keywords: `${content.name}, ${content.roleDescription}, portfolio, blog, skills, web development, web design`,
+  authors: [{ name: content.name }],
   openGraph: {
-    title: `${content.name}`,
-    description: content.roleDescription,
+    title: `${content.name} - ${content.roleDescription}`,
+    description: `${content.name}, ${content.roleDescription}. Explore my portfolio, blog, and learn more about my skills.`,
     siteName: `${content.name}`,
     locale: "en_US",
     type: "website",
@@ -32,11 +34,12 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
+      "max-image-preview": "large", // Improve image previews
     },
   },
-  twitter: {
-    title: `${content.name}`,
-    card: "summary_large_image",
+
+  alternates: {
+    canonical: "/", // Canonical URL
   },
 };
 export default function RootLayout({
