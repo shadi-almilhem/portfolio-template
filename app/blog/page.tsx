@@ -25,7 +25,7 @@ export default async function Blog({
   searchParams: { page?: string };
 }) {
   const currentPage = Number(searchParams.page) || 1;
-  const postsPerPage = 6;
+  const postsPerPage = 2;
 
   const blogs = await getAllBlogs();
 

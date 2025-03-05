@@ -1,9 +1,7 @@
 "use client";
 
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { Button } from "./Button";
+import { Link } from "next-view-transitions";
 
 interface PaginationProps {
   totalPages: number;
@@ -16,8 +14,6 @@ export default function Pagination({
   currentPage,
   baseUrl,
 }: PaginationProps) {
-  const router = useRouter();
-
   // Don't render pagination if there's only one page
   if (totalPages <= 1) return null;
 
@@ -76,17 +72,23 @@ export default function Pagination({
       aria-label="Pagination"
     >
       {/* Previous page button */}
-      <Button
-        size="icon"
-        className={`h-9 w-9 ${currentPage === 1 ? "!bg-zinc-800 cursor-not-allowed" : "cursor-pointer"}`}
-        disabled={currentPage === 1}
-        onClick={() =>
-          currentPage > 1 && router.push(`${baseUrl}?page=${currentPage - 1}`)
-        }
-        aria-label="Previous page"
-      >
-        <ChevronLeftIcon className="h-4 w-4" />
-      </Button>
+      {currentPage === 1 ? (
+        <button
+          disabled
+          className="h-9 w-9 inline-flex items-center justify-center rounded-md bg-zinc-900 text-zinc-100 opacity-0"
+          aria-label="Previous page"
+        >
+          <ChevronLeftIcon className="h-4 w-4" />
+        </button>
+      ) : (
+        <Link
+          href={`${baseUrl}?page=${currentPage - 1}`}
+          className="h-9 w-9 inline-flex items-center duration-300 justify-center rounded-md bg-zinc-800 text-zinc-100 hover:bg-zinc-700/60 transition-colors"
+          aria-label="Previous page"
+        >
+          <ChevronLeftIcon className="h-4 w-4" />
+        </Link>
+      )}
 
       {/* Page numbers */}
       <div className="flex items-center space-x-2">
@@ -101,17 +103,19 @@ export default function Pagination({
 
           const isCurrentPage = page === currentPage;
 
-          return (
+          return isCurrentPage ? (
+            <span
+              key={`page-${page}`}
+              aria-current="page"
+              className="inline-flex border h-9 min-w-9 items-center justify-center rounded-md text-sm font-medium bg-zinc-800 border-zinc-700/50  px-3"
+            >
+              {page}
+            </span>
+          ) : (
             <Link
               key={`page-${page}`}
               href={`${baseUrl}?page=${page}`}
-              aria-current={isCurrentPage ? "page" : undefined}
-              className={`inline-flex h-9 min-w-9 items-center justify-center rounded-md text-sm font-medium transition-colors
-                ${
-                  isCurrentPage
-                    ? "bg-zinc-800 border border-zinc-700  hover:bg-zinc-800/90"
-                    : " bg-transparent hover:bg-zinc-800/50 "
-                } px-3`}
+              className="inline-flex h-9 min-w-9 items-center justify-center rounded-md text-sm font-medium transition-colors duration-300  bg-zinc-900 hover:bg-zinc-800 px-3"
             >
               {page}
             </Link>
@@ -120,18 +124,23 @@ export default function Pagination({
       </div>
 
       {/* Next page button */}
-      <Button
-        size="icon"
-        className={`h-9 w-9 ${currentPage === totalPages ? "!bg-zinc-800 cursor-not-allowed" : "cursor-pointer"}`}
-        disabled={currentPage === totalPages}
-        onClick={() =>
-          currentPage < totalPages &&
-          router.push(`${baseUrl}?page=${currentPage + 1}`)
-        }
-        aria-label="Next page"
-      >
-        <ChevronRightIcon className="h-4 w-4" />
-      </Button>
+      {currentPage === totalPages ? (
+        <button
+          disabled
+          className="h-9 w-9 inline-flex items-center justify-center rounded-md bg-zinc-900 text-zinc-100 opacity-0"
+          aria-label="Next page"
+        >
+          <ChevronRightIcon className="h-4 w-4" />
+        </button>
+      ) : (
+        <Link
+          href={`${baseUrl}?page=${currentPage + 1}`}
+          className="h-9 w-9 inline-flex items-center duration-300 justify-center rounded-md bg-zinc-800 text-zinc-100 hover:bg-zinc-700/60 transition-colors"
+          aria-label="Next page"
+        >
+          <ChevronRightIcon className="h-4 w-4" />
+        </Link>
+      )}
     </nav>
   );
 }
