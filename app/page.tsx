@@ -18,7 +18,7 @@ import {
   getAllCertifications,
   getAllExperiences,
   getAllProjects,
-} from "@/lib/sanity-queries";
+} from "@/utils/sanity-queries";
 import Experience from "./components/Resume";
 import BlurFade from "./components/blur-fade";
 

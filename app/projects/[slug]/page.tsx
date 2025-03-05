@@ -1,6 +1,6 @@
 import { ArticleLayout } from "@/app/components/ArticleLayout";
 import { PortableTextComponent } from "@/app/components/PortableTextComponent";
-import { getProject } from "@/lib/sanity-queries";
+import { getProject } from "@/utils/sanity-queries";
 import { PortableText } from "next-sanity";
 import React from "react";
 

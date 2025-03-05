@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { AnimatePresence, motion, useInView, Variants } from "framer-motion";
+import { AnimatePresence, motion, useInView, Variants } from "motion/react";
 import { useRef } from "react";
 
 interface BlurFadeProps {
@@ -26,11 +26,11 @@ const BlurFade = ({
   children,
   className,
   variant,
-  duration = 0.4,
+  duration = 0.3,
   delay = 0,
   yOffset = 20,
-  inViewMargin = "-50px",
-  blur = "6px",
+  inViewMargin = "-200px",
+  blur = "4px",
   transitionType = "spring",
 }: BlurFadeProps) => {
   const ref = useRef(null);

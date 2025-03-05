@@ -2,7 +2,7 @@
 
 import { cn } from "@/utils/cn";
 import { Button } from "./Button";
-import { formatDate } from "@/lib/formatDate";
+import { formatDate } from "@/utils/formatDate";
 
 interface BlogCardProps {
   title: string;

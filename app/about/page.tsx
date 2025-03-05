@@ -10,6 +10,7 @@ import {
   LinkedInIcon,
   XIcon,
 } from "@/app/components/SocialIcons";
+import BlurFade from "../components/blur-fade";
 
 function SocialLink({ className, href, children, icon: Icon }: any) {
   return (
@@ -49,69 +50,74 @@ export const metadata = {
 
 export default function About() {
   return (
-    <Container className=" mb-24 pt-60">
-      <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-12 lg:gap-x-12">
-        <div className="lg:col-span-12 border-b-2 border-zinc-100 pb-16 dark:border-zinc-700/40">
-          <div className="flex items-center flex-col md:flex-row md:items-end gap-8">
-            <h1 className="text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl dark:text-zinc-100">
-              {content.about.heading}
-            </h1>
-            <Image
-              src={"/portrait.webp"}
-              alt="my portrait picture"
-              width={500}
-              height={500}
-              className="relative max-w-full aspect-square rounded-xl bg-zinc-100 object-cover dark:bg-zinc-800"
-            />
+    <BlurFade>
+      <Container className=" mb-24 pt-60">
+        <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-12 lg:gap-x-12">
+          <div className="lg:col-span-12 border-b-2 border-zinc-100 pb-16 dark:border-zinc-700/40">
+            <div className="flex items-center flex-col md:flex-row md:items-end gap-8">
+              <h1 className="text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl dark:text-zinc-100">
+                {content.about.heading}
+              </h1>
+              <Image
+                src={"/portrait.webp"}
+                alt="my portrait picture"
+                width={500}
+                height={500}
+                className="relative max-w-full aspect-square rounded-xl bg-zinc-100 object-cover dark:bg-zinc-800"
+              />
+            </div>
           </div>
-        </div>
 
-        {/* Content section - spans 7 columns on large screens */}
-        <div className="lg:col-span-7">
-          <div className="mt-8 space-y-6 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
-            {Object.values(content.about.paragraph).map(
-              (paragraph: string, index: number) => (
-                <p key={index}>{paragraph}</p>
-              )
-            )}
+          {/* Content section - spans 7 columns on large screens */}
+          <div className="lg:col-span-7">
+            <div className="mt-8 space-y-6 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+              {Object.values(content.about.paragraph).map(
+                (paragraph: string, index: number) => (
+                  <p key={index}>{paragraph}</p>
+                )
+              )}
+            </div>
           </div>
-        </div>
 
-        {/* Image and social links - spans 5 columns on large screens */}
-        <div className="lg:col-span-5">
-          <div className="flex flex-col items-center lg:items-start space-y-12">
-            {/* Image container with subtle shadow and no rotation */}
-            <div className="relative w-full max-w-xs"></div>
+          {/* Image and social links - spans 5 columns on large screens */}
+          <div className="lg:col-span-5">
+            <div className="flex flex-col items-center lg:items-start space-y-12">
+              {/* Image container with subtle shadow and no rotation */}
+              <div className="relative w-full max-w-xs"></div>
 
-            {/* Social links with simplified design */}
-            <div className="w-full">
-              <ul role="list" className="flex flex-col space-y-3">
-                <SocialLink href={content.hero.X} icon={XIcon}>
-                  Follow on X
-                </SocialLink>
-                <SocialLink href={content.hero.Instagram} icon={InstagramIcon}>
-                  Follow on Instagram
-                </SocialLink>
-                <SocialLink href={content.hero.GitHub} icon={GitHubIcon}>
-                  Follow on GitHub
-                </SocialLink>
-                <SocialLink href={content.hero.LinkedIn} icon={LinkedInIcon}>
-                  Follow on LinkedIn
-                </SocialLink>
-                <li className="pt-4 mt-4 border-t border-zinc-100 dark:border-zinc-800">
-                  <Link
-                    href={`mailto:${content.hero.email}`}
-                    className="group flex items-center text-sm font-medium text-zinc-600 transition-colors duration-300 hover:text-violet-500 dark:text-zinc-400 dark:hover:text-violet-500"
+              {/* Social links with simplified design */}
+              <div className="w-full">
+                <ul role="list" className="flex flex-col space-y-3">
+                  <SocialLink href={content.hero.X} icon={XIcon}>
+                    Follow on X
+                  </SocialLink>
+                  <SocialLink
+                    href={content.hero.Instagram}
+                    icon={InstagramIcon}
                   >
-                    <MailIcon className="h-5 w-5 flex-none fill-zinc-500 transition-colors duration-300 group-hover:fill-violet-500" />
-                    <span className="ml-3">{content.hero.email}</span>
-                  </Link>
-                </li>
-              </ul>
+                    Follow on Instagram
+                  </SocialLink>
+                  <SocialLink href={content.hero.GitHub} icon={GitHubIcon}>
+                    Follow on GitHub
+                  </SocialLink>
+                  <SocialLink href={content.hero.LinkedIn} icon={LinkedInIcon}>
+                    Follow on LinkedIn
+                  </SocialLink>
+                  <li className="pt-4 mt-4 border-t border-zinc-100 dark:border-zinc-800">
+                    <Link
+                      href={`mailto:${content.hero.email}`}
+                      className="group flex items-center text-sm font-medium text-zinc-600 transition-colors duration-300 hover:text-violet-500 dark:text-zinc-400 dark:hover:text-violet-500"
+                    >
+                      <MailIcon className="h-5 w-5 flex-none fill-zinc-500 transition-colors duration-300 group-hover:fill-violet-500" />
+                      <span className="ml-3">{content.hero.email}</span>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </BlurFade>
   );
 }

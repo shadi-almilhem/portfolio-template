@@ -11,6 +11,7 @@ export function Layout({ children }: any) {
       <div className="fixed inset-0 flex justify-center sm:px-8">
         <div className="flex w-full max-w-[90rem] lg:px-8">
           <div
+            suppressHydrationWarning
             className="w-full -z-50 bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20 
   bg-[length:100px_100px] 
   [background-image:linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)]
