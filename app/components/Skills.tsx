@@ -13,7 +13,7 @@ const Skill = ({ name, isVisible, index }: SkillProps) => {
         ${
           isVisible
             ? "bg-zinc-50 shadow-[0px_0px_0px_1px_#d4d4d8] dark:shadow-[0px_0px_0px_1px_#3f3f46] text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800/70"
-            : "bg-white dark:bg-zinc-900"
+            : "bg-transparent dark:bg-transparent"
         }`}
     >
       {isVisible && (

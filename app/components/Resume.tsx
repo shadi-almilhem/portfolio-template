@@ -5,7 +5,7 @@ import { Button } from "./Button";
 
 export default function Experience({ experiences }: any) {
   return (
-    <div className="rounded-2xl border border-zinc-100 p-8 shadow-sm transition-all hover:shadow-md dark:border-zinc-700/40 dark:bg-zinc-800/20">
+    <div className="rounded-2xl border border-zinc-100 p-8 shadow-sm transition-all hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
       <h2 className="flex items-center text-lg font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none text-indigo-500 dark:text-indigo-400" />
         <span className="ml-3">Professional Experience</span>
