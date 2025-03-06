@@ -75,7 +75,7 @@ export default function Pagination({
       {currentPage === 1 ? (
         <button
           disabled
-          className="h-9 w-9 inline-flex items-center justify-center rounded-md bg-zinc-900 text-zinc-100 opacity-0"
+          className="h-9 w-9 inline-flex items-center justify-center rounded-md bg-zinc-200 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100 opacity-0"
           aria-label="Previous page"
         >
           <ChevronLeftIcon className="h-4 w-4" />
@@ -83,7 +83,7 @@ export default function Pagination({
       ) : (
         <Link
           href={`${baseUrl}?page=${currentPage - 1}`}
-          className="h-9 w-9 inline-flex items-center duration-300 justify-center rounded-md bg-zinc-800 text-zinc-100 hover:bg-zinc-700/60 transition-colors"
+          className="h-9 w-9 inline-flex items-center duration-300 justify-center rounded-md bg-zinc-200 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100 hover:bg-zinc-300 dark:hover:bg-zinc-700/60 transition-colors"
           aria-label="Previous page"
         >
           <ChevronLeftIcon className="h-4 w-4" />
@@ -95,7 +95,10 @@ export default function Pagination({
         {pageNumbers.map((page, index) => {
           if (page === "ellipsis-start" || page === "ellipsis-end") {
             return (
-              <span key={`ellipsis-${index}`} className="px-3 py-2">
+              <span
+                key={`ellipsis-${index}`}
+                className="px-3 py-2 text-zinc-800 dark:text-zinc-200"
+              >
                 &hellip;
               </span>
             );
@@ -107,7 +110,7 @@ export default function Pagination({
             <span
               key={`page-${page}`}
               aria-current="page"
-              className="inline-flex border h-9 min-w-9 items-center justify-center rounded-md text-sm font-medium bg-zinc-800 border-zinc-700/50  px-3"
+              className="inline-flex border h-9 min-w-9 items-center justify-center rounded-md text-sm font-medium bg-zinc-200 dark:bg-zinc-800 border-zinc-400/50 dark:border-zinc-700/50 text-zinc-900 dark:text-zinc-100 px-3"
             >
               {page}
             </span>
@@ -115,7 +118,7 @@ export default function Pagination({
             <Link
               key={`page-${page}`}
               href={`${baseUrl}?page=${page}`}
-              className="inline-flex h-9 min-w-9 items-center justify-center rounded-md text-sm font-medium transition-colors duration-300  bg-zinc-900 hover:bg-zinc-800 px-3"
+              className="inline-flex h-9 min-w-9 items-center justify-center rounded-md text-sm font-medium transition-colors duration-300 bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-200 dark:hover:bg-zinc-800 px-3"
             >
               {page}
             </Link>
@@ -127,7 +130,7 @@ export default function Pagination({
       {currentPage === totalPages ? (
         <button
           disabled
-          className="h-9 w-9 inline-flex items-center justify-center rounded-md bg-zinc-900 text-zinc-100 opacity-0"
+          className="h-9 w-9 inline-flex items-center justify-center rounded-md bg-zinc-200 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100 opacity-0"
           aria-label="Next page"
         >
           <ChevronRightIcon className="h-4 w-4" />
@@ -135,7 +138,7 @@ export default function Pagination({
       ) : (
         <Link
           href={`${baseUrl}?page=${currentPage + 1}`}
-          className="h-9 w-9 inline-flex items-center duration-300 justify-center rounded-md bg-zinc-800 text-zinc-100 hover:bg-zinc-700/60 transition-colors"
+          className="h-9 w-9 inline-flex items-center duration-300 justify-center rounded-md bg-zinc-200 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100 hover:bg-zinc-300 dark:hover:bg-zinc-700/60 transition-colors"
           aria-label="Next page"
         >
           <ChevronRightIcon className="h-4 w-4" />

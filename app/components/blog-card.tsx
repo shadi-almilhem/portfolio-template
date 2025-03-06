@@ -22,7 +22,7 @@ export default function BlogCard({
   return (
     <div
       className={cn(
-        "relative flex border border-zinc-100  flex-col overflow-hidden rounded-xl shadow-sm transition-all duration-300 dark:border-zinc-800 dark:bg-zinc-900 hover:shadow-md dark:hover:shadow-black/20",
+        "relative flex border border-zinc-100 bg-[hsl(0,0%,100%)]  flex-col overflow-hidden rounded-xl shadow-sm transition-all duration-300 dark:border-zinc-800 dark:bg-zinc-900 hover:shadow-md dark:hover:shadow-black/20",
         className
       )}
     >

@@ -24,8 +24,9 @@ export default async function Blog({
 }: {
   searchParams: { page?: string };
 }) {
-  const currentPage = Number(searchParams.page) || 1;
-  const postsPerPage = 2;
+  const awaitedSearchParams = await searchParams;
+  const currentPage = Number(awaitedSearchParams.page) || 1;
+  const postsPerPage = 6;
 
   const blogs = await getAllBlogs();
 

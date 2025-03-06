@@ -35,7 +35,7 @@ function NavItem({
       >
         {children}
         {isActive && (
-          <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-violet-500/0 via-violet-500/40 to-violet-500/0 dark:from-violet-400/0 dark:via-violet-400/40 dark:to-violet-400/0" />
+          <span className="absolute inset-x-2 -bottom-px h-[2px] bg-gradient-to-r from-violet-500/0 via-violet-500/40 to-violet-500/0 dark:from-violet-400/0 dark:via-violet-400/40 dark:to-violet-400/0" />
         )}
       </Link>
     </li>
@@ -51,7 +51,7 @@ function DesktopNavigation(props: React.HTMLAttributes<HTMLElement>) {
         <NavItem href="/blog">Blog</NavItem>
         <a
           href={"mailto:" + content.hero.email}
-          className="text-zinc-800 flex items-center gap-2 hover:text-zinc-900 dark:hover:text-zinc-100  dark:text-zinc-200 dark:bg-zinc-700  bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-700/80 transition-all duration-300 rounded-full px-4 py1 font-semibold"
+          className="text-zinc-800 flex items-center gap-2 hover:text-zinc-900 dark:hover:text-zinc-100  dark:text-zinc-200 dark:bg-zinc-700  bg-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-600/50 transition-all duration-300 rounded-full px-4 py1 font-semibold"
         >
           Get Contact
         </a>

@@ -31,15 +31,15 @@ export default function SwapTextCard({
           src={imageSrc}
           alt={`${initialText} background`}
           fill
-          className="object-cover"
+          className="object-cover w-full h-full"
           priority
         />
         {/* Gradient overlay for better text readability - stronger at bottom */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60  to-transparent"></div>
+        <div className="absolute inset-0  bg-gradient-to-t from-black/80  to-transparent" />
       </div>
 
       {/* Card Content - Now positioned at the bottom with padding */}
-      <div className="relative z-10 w-full p-2">
+      <div className="relative z-10 w-full">
         <div className="flex flex-col md:min-w-72">
           <div className="md:hidden">
             <div className="text-xl font-semibold text-white">
@@ -51,7 +51,7 @@ export default function SwapTextCard({
             initialText={initialText}
             finalText={finalText}
             disableClick
-            className="-mb-7 hidden min-h-20 w-full transition-all duration-400 group-hover:mb-0 md:flex md:flex-col"
+            className="-mb-8 hidden min-h-20 w-full transition-all duration-400 group-hover:mb-0 md:flex md:flex-col"
             initialTextClassName="text-xl group-hover:opacity-0 h-full duration-400 font-semibold text-white"
             finalTextClassName="text-sm h-full duration-400 font-medium text-gray-200"
           />

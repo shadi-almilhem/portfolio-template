@@ -8,7 +8,7 @@ export default function Certifications({
   certifications: Certification[];
 }) {
   return (
-    <div className="rounded-2xl border border-zinc-100 p-8 shadow-sm transition-all hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
+    <div className="rounded-2xl border border-zinc-100 bg-[hsl(0,0%,100%)] bg-zinc- p-8 shadow-sm transition-all hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
       <h2 className="flex items-center text-lg font-semibold text-zinc-900 dark:text-zinc-100">
         <Award className="h-6 w-6 flex-none text-teal-500 dark:text-teal-400" />
         <span className="ml-3">Certifications</span>

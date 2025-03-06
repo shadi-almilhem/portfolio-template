@@ -24,7 +24,9 @@ export default async function Projects({
 }: {
   searchParams: { page?: string };
 }) {
-  const currentPage = Number(searchParams.page) || 1;
+  const awaitedSearchParams = await searchParams;
+
+  const currentPage = Number(awaitedSearchParams.page) || 1;
   const projectsPerPage = 6;
 
   const projects = await getAllProjects();

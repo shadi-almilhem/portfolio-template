@@ -53,7 +53,7 @@ export default async function Home() {
               <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
                 {content.hero.about}
               </p>
-              <div className="mt-6 flex gap-6">
+              <div className="mt-6 flex gap-6 ">
                 <SocialLink
                   href={content.hero.X}
                   aria-label="Follow on X"
@@ -82,7 +82,7 @@ export default async function Home() {
       <BlurFade>
         <Container className="mt-24 md:mt-28">
           <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-            <div className="flex flex-col gap-8  justify-between">
+            <div className="flex flex-col gap-4  justify-between">
               {projects.slice(0, 3).map((project, index) => (
                 <SwapTextCard
                   key={index}
@@ -106,7 +106,7 @@ export default async function Home() {
       <BlurFade>
         <Container className="mt-24 md:mt-28">
           <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-            <div className="flex flex-col justify-between">
+            <div className="flex flex-col justify-between gap-4">
               {blogs.slice(0, 3).map((blog, index) => (
                 <BlogCard
                   key={index}

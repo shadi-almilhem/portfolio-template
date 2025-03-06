@@ -13,10 +13,10 @@ export function Layout({ children }: any) {
           <div
             suppressHydrationWarning
             className="w-full -z-50 bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20 
-  bg-[length:100px_100px] 
+  bg-[length:200px_200px] 
   [background-image:linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)]
   dark:[background-image:linear-gradient(to_right,rgba(212,212,216,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(212,212,216,0.015)_1px,transparent_1px)]"
-          />{" "}
+          />
         </div>
       </div>
       <div className="relative  items-center z-50 flex w-full flex-col">
