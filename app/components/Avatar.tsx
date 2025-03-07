@@ -14,9 +14,6 @@ export default function Avatar() {
           priority
         />
       </div>
-      <div
-        className={`absolute -z-10 inset-0 rounded-full bg-gradient-to-r from-emerald-400 to-teal-500 opacity-50 blur-md transition-all duration-500`}
-      ></div>
     </Link>
   );
 }
