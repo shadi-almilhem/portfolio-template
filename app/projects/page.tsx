@@ -5,6 +5,7 @@ import BlurFade from "../components/blur-fade";
 import Pagination from "@/app/components/pagination";
 import { Suspense } from "react";
 import content from "@/app/content/content.json";
+import NotFound from "../not-found";
 export const metadata = {
   title: `Projects | ${content.name} - Portfolio`,
   description: `View the portfolio of ${content.name}, showcasing their work and skills.`,
@@ -24,6 +25,9 @@ export default async function Projects({
 }: {
   searchParams: { page?: string };
 }) {
+  if (!content.enableSections.enableProjects) {
+    return <NotFound />;
+  }
   const awaitedSearchParams = await searchParams;
 
   const currentPage = Number(awaitedSearchParams.page) || 1;

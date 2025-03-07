@@ -1,14 +1,18 @@
 import { ArticleLayout } from "@/app/components/ArticleLayout";
 import { PortableTextComponent } from "@/app/components/PortableTextComponent";
+import NotFound from "@/app/not-found";
 import { getProject } from "@/utils/sanity-queries";
 import { PortableText } from "next-sanity";
 import React from "react";
-
+import content from "@/app/content/content.json";
 export default async function ProjectPost({
   params,
 }: {
   params: { slug: string };
 }) {
+  if (!content.enableSections.enableProjects) {
+    return <NotFound />;
+  }
   const { slug } = await params;
   const project = await getProject(slug);
 

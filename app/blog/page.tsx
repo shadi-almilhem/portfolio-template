@@ -5,6 +5,7 @@ import BlurFade from "../components/blur-fade";
 import Pagination from "@/app/components/pagination";
 import { Suspense } from "react";
 import content from "@/app/content/content.json";
+import NotFound from "../not-found";
 export const metadata = {
   title: `Blog | ${content.name} - ${content.roleDescription}`,
   description: `Explore the blog of ${content.name}, a ${content.roleDescription}. Discover articles and insights.`,
@@ -24,6 +25,10 @@ export default async function Blog({
 }: {
   searchParams: { page?: string };
 }) {
+  if (!content.enableSections.enableBlog) {
+    return <NotFound />;
+  }
+
   const awaitedSearchParams = await searchParams;
   const currentPage = Number(awaitedSearchParams.page) || 1;
   const postsPerPage = 6;

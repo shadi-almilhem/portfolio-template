@@ -21,9 +21,9 @@ function SocialLink({ className, href, children, icon: Icon }: any) {
     >
       <Link
         href={href}
-        className="flex items-center text-sm font-medium text-zinc-600 transition-colors duration-300 hover:text-violet-500 dark:text-zinc-400 dark:hover:text-violet-500"
+        className="flex items-center text-sm font-medium text-zinc-600 transition-colors duration-300 hover:text-emerald-500 dark:text-zinc-400 dark:hover:text-emerald-500"
       >
-        <Icon className="h-5 w-5 flex-none fill-zinc-500 transition-colors duration-300 group-hover:fill-violet-500" />
+        <Icon className="h-5 w-5 flex-none fill-zinc-500 transition-colors duration-300 group-hover:fill-emerald-500" />
         <span className="ml-3">{children}</span>
       </Link>
     </li>
@@ -65,13 +65,19 @@ export default function About() {
               <h1 className="text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl dark:text-zinc-100">
                 {content.about.heading}
               </h1>
-              <Image
-                src={"/portrait.webp"}
-                alt="my portrait picture"
-                width={500}
-                height={500}
-                className="relative max-w-full aspect-square rounded-xl bg-zinc-100 object-cover dark:bg-zinc-800"
-              />
+              <picture>
+                <source srcSet="/portrait.jpg" type="image/jpeg" />
+
+                <source srcSet="/portrait.webp" type="image/webp" />
+                <source srcSet="/portrait.png" type="image/png" />
+                <Image
+                  src="/portrait.jpg"
+                  alt="portrait picture"
+                  width={500}
+                  height={500}
+                  className="relative max-w-full aspect-square rounded-xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                />
+              </picture>
             </div>
           </div>
 
@@ -113,9 +119,9 @@ export default function About() {
                   <li className="pt-4 mt-4 border-t border-zinc-100 dark:border-zinc-800">
                     <Link
                       href={`mailto:${content.hero.email}`}
-                      className="group flex items-center text-sm font-medium text-zinc-600 transition-colors duration-300 hover:text-violet-500 dark:text-zinc-400 dark:hover:text-violet-500"
+                      className="group flex items-center text-sm font-medium text-zinc-600 transition-colors duration-300 hover:text-emerald-500 dark:text-zinc-400 dark:hover:text-emerald-500"
                     >
-                      <MailIcon className="h-5 w-5 flex-none fill-zinc-500 transition-colors duration-300 group-hover:fill-violet-500" />
+                      <MailIcon className="h-5 w-5 flex-none fill-zinc-500 transition-colors duration-300 group-hover:fill-emerald-500" />
                       <span className="ml-3">{content.hero.email}</span>
                     </Link>
                   </li>

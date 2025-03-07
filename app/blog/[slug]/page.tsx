@@ -3,12 +3,18 @@ import { PortableTextComponent } from "@/app/components/PortableTextComponent";
 import { getBlog } from "@/utils/sanity-queries";
 import { PortableText } from "@portabletext/react";
 import React from "react";
-
+import content from "@/app/content/content.json";
+import NotFound from "@/app/not-found";
 export default async function BlogPost({
   params,
 }: {
   params: { slug: string };
 }) {
+  const blogPage = content.enableSections.enableBlog;
+
+  if (!blogPage) {
+    return <NotFound />;
+  }
   const { slug } = await params;
   const blog = await getBlog(slug);
   console.log(blog?.date);

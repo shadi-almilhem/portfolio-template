@@ -2,9 +2,10 @@
 import { Footer } from "@/app/components/Footer";
 import { Header } from "@/app/components/Header";
 import { usePathname } from "next/navigation";
-
+import content from "@/app/content/content.json";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function Layout({ children }: any) {
+  const enableSections = content.enableSections;
   const isStudioRoute = usePathname().startsWith("/studio");
   return (
     <>
@@ -22,9 +23,9 @@ export function Layout({ children }: any) {
       <div className="relative  items-center z-50 flex w-full flex-col">
         {!isStudioRoute ? (
           <>
-            <Header />
+            <Header enableSections={enableSections} />
             <main className="flex-auto">{children}</main>
-            <Footer />
+            <Footer enableSections={enableSections} />
           </>
         ) : (
           <main className="flex-auto">{children}</main>

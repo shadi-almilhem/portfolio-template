@@ -1,3 +1,4 @@
+import type React from "react";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Link } from "next-view-transitions";
 import { Container } from "@/app/components/Container";
@@ -8,19 +9,19 @@ import {
   XIcon,
 } from "@/app/components/SocialIcons";
 import content from "@/app/content/content.json";
-import Certifications from "./components/Certifications";
-import SwapTextCard from "./components/swap-text-card";
-import BlogCard from "./components/blog-card";
-import { GridBeam } from "./components/GridBeam";
-import Skills from "./components/Skills";
 import {
   getAllBlogs,
   getAllCertifications,
   getAllExperiences,
   getAllProjects,
 } from "@/utils/sanity-queries";
-import Experience from "./components/Resume";
 import BlurFade from "./components/blur-fade";
+import { GridBeam } from "./components/GridBeam";
+import SwapTextCard from "./components/swap-text-card";
+import Experience from "./components/Resume";
+import BlogCard from "./components/blog-card";
+import Certifications from "./components/Certifications";
+import SkillsSection from "./components/Skills";
 
 function SocialLink({
   icon: Icon,
@@ -36,11 +37,21 @@ function SocialLink({
     </Link>
   );
 }
+
 export default async function Home() {
-  const projects = await getAllProjects();
-  const blogs = await getAllBlogs();
-  const experiences = await getAllExperiences();
-  const certifications = await getAllCertifications();
+  // Extract enableSections from content
+  const { enableSections } = content;
+
+  // Only fetch data for enabled sections
+  const projects = enableSections.enableProjects ? await getAllProjects() : [];
+  const blogs = enableSections.enableBlog ? await getAllBlogs() : [];
+  const experiences = enableSections.enableExperience
+    ? await getAllExperiences()
+    : [];
+  const certifications = enableSections.enableCertifications
+    ? await getAllCertifications()
+    : [];
+
   return (
     <>
       <BlurFade>
@@ -79,55 +90,107 @@ export default async function Home() {
           </GridBeam>
         </Container>
       </BlurFade>
-      <BlurFade>
-        <Container className="mt-24 md:mt-28">
-          <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-            <div className="flex flex-col gap-4  justify-between">
-              {projects.slice(0, 3).map((project, index) => (
-                <SwapTextCard
-                  key={index}
-                  imageSrc={
-                    typeof project.thumbnail === "object"
-                      ? (project.thumbnail as any)?.asset?.url
-                      : project.thumbnail
-                  }
-                  href={"/projects/" + project.slug}
-                  initialText={project.title}
-                  finalText={project.description}
-                />
-              ))}
+
+      {/* Projects and Experience Section */}
+      {(enableSections.enableProjects || enableSections.enableExperience) && (
+        <BlurFade>
+          <Container className="mt-24 md:mt-28">
+            <div
+              className={`mx-auto grid max-w-xl grid-cols-1 gap-y-20 ${
+                enableSections.enableProjects && enableSections.enableExperience
+                  ? "lg:max-w-none lg:grid-cols-2"
+                  : "max-w-2xl"
+              }`}
+            >
+              {enableSections.enableProjects && (
+                <div
+                  className={`flex flex-col gap-4 justify-between ${
+                    !enableSections.enableExperience
+                      ? "lg:max-w-2xl mx-auto"
+                      : ""
+                  }`}
+                >
+                  {projects.slice(0, 3).map((project, index) => (
+                    <SwapTextCard
+                      key={index}
+                      imageSrc={
+                        typeof project.thumbnail === "object"
+                          ? (project.thumbnail as any)?.asset?.url
+                          : project.thumbnail
+                      }
+                      href={"/projects/" + project.slug}
+                      initialText={project.title}
+                      finalText={project.description}
+                    />
+                  ))}
+                </div>
+              )}
+              {enableSections.enableExperience && (
+                <div
+                  className={`space-y-10 ${
+                    enableSections.enableProjects
+                      ? "lg:pl-16 xl:pl-24"
+                      : "lg:max-w-2xl mx-auto"
+                  }`}
+                >
+                  <Experience experiences={experiences} />
+                </div>
+              )}
             </div>
-            <div className="space-y-10 lg:pl-16 xl:pl-24 ">
-              <Experience experiences={experiences} />
+          </Container>
+        </BlurFade>
+      )}
+
+      {/* Blog and Certifications Section */}
+      {(enableSections.enableBlog || enableSections.enableCertifications) && (
+        <BlurFade>
+          <Container className="mt-24 md:mt-28">
+            <div
+              className={`mx-auto grid max-w-xl grid-cols-1 gap-y-20 ${
+                enableSections.enableBlog && enableSections.enableCertifications
+                  ? "lg:max-w-none lg:grid-cols-2"
+                  : "max-w-2xl"
+              }`}
+            >
+              {enableSections.enableBlog && (
+                <div
+                  className={`flex flex-col justify-between gap-4 ${
+                    !enableSections.enableCertifications
+                      ? "lg:max-w-2xl mx-auto"
+                      : ""
+                  }`}
+                >
+                  {blogs.slice(0, 3).map((blog, index) => (
+                    <BlogCard
+                      key={index}
+                      title={blog.title}
+                      date={blog.date}
+                      tags={blog.tags}
+                      href={"/blog/" + blog.slug}
+                    />
+                  ))}
+                </div>
+              )}
+              {enableSections.enableCertifications && (
+                <div
+                  className={`space-y-10 ${enableSections.enableBlog ? "lg:pl-16 xl:pl-24" : "lg:max-w-xl mx-auto"}`}
+                >
+                  <Certifications certifications={certifications} />
+                </div>
+              )}
             </div>
-          </div>
-        </Container>
-      </BlurFade>
-      <BlurFade>
-        <Container className="mt-24 md:mt-28">
-          <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-            <div className="flex flex-col justify-between gap-4">
-              {blogs.slice(0, 3).map((blog, index) => (
-                <BlogCard
-                  key={index}
-                  title={blog.title}
-                  date={blog.date}
-                  tags={blog.tags}
-                  href={"/blog/" + blog.slug}
-                />
-              ))}
-            </div>
-            <div className="space-y-10 lg:pl-16 xl:pl-24  ">
-              <Certifications certifications={certifications} />
-            </div>
-          </div>
-        </Container>
-      </BlurFade>
-      <BlurFade>
-        <Container className="mt-24 md:mt-28">
-          <Skills />
-        </Container>
-      </BlurFade>
+          </Container>
+        </BlurFade>
+      )}
+
+      {/* Skills Section */}
+      {enableSections.enableSkills && (
+        <BlurFade>
+          <Container className="mt-24 md:mt-28">
+            <SkillsSection />
+          </Container>
+        </BlurFade>
+      )}
     </>
   );
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import type React from "react";
@@ -29,29 +30,40 @@ function NavItem({
         className={clsx(
           "relative block px-3 py-2 transition-all duration-300",
           isActive
-            ? "text-violet-500 dark:text-violet-400"
-            : "hover:text-violet-500 dark:hover:text-violet-400"
+            ? "text-emerald-500 dark:text-emerald-400"
+            : "hover:text-emerald-500 dark:hover:text-emerald-400"
         )}
       >
         {children}
         {isActive && (
-          <span className="absolute inset-x-2 -bottom-px h-[2px] bg-gradient-to-r from-violet-500/0 via-violet-500/40 to-violet-500/0 dark:from-violet-400/0 dark:via-violet-400/40 dark:to-violet-400/0" />
+          <>
+            <span className="absolute inset-x-2 -bottom-px h-[2px] bg-gradient-to-r from-emerald-500/0 via-emerald-500/40  to-emerald-500/0 dark:from-emerald-400/0 dark:via-emerald-400/40 dark:to-emerald-400/0 blur-[1px]" />
+            <span className="absolute inset-x-2 blur-[6px] top-2 h-[2px] bg-gradient-to-r from-emerald-600/0 via-emerald-600/60  to-emerald-600/0 dark:from-emerald-400/0 dark:via-emerald-400/50 dark:to-emerald-400/0" />
+          </>
         )}
       </Link>
     </li>
   );
 }
 
-function DesktopNavigation(props: React.HTMLAttributes<HTMLElement>) {
+function DesktopNavigation({
+  enableSections,
+  ...props
+}: {
+  enableSections?: any;
+} & React.HTMLAttributes<HTMLElement>) {
   return (
     <nav {...props}>
       <ul className="flex rounded-full gap-2 bg-white/90 py-1 px-1 text-sm font-medium text-zinc-800 shadow-sm shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
         <NavItem href="/about">About</NavItem>
-        <NavItem href="/projects">Projects</NavItem>
-        <NavItem href="/blog">Blog</NavItem>
+        {enableSections?.enableProjects && (
+          <NavItem href="/projects">Projects</NavItem>
+        )}
+        {enableSections?.enableBlog && <NavItem href="/blog">Blog</NavItem>}
+
         <a
           href={"mailto:" + content.hero.email}
-          className="text-zinc-800 flex items-center gap-2 hover:text-zinc-900 dark:hover:text-zinc-100  dark:text-zinc-200 dark:bg-zinc-700  bg-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-600/50 transition-all duration-300 rounded-full px-4 py1 font-semibold"
+          className="text-zinc-800 flex items-center gap-2 hover:text-zinc-900 dark:hover:text-zinc-100  dark:text-zinc-200 dark:bg-zinc-700  bg-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-600/80 transition-all duration-300 rounded-full px-4 py1 font-semibold"
         >
           Get Contact
         </a>
@@ -60,7 +72,7 @@ function DesktopNavigation(props: React.HTMLAttributes<HTMLElement>) {
   );
 }
 
-export function Header() {
+export function Header({ enableSections }: { enableSections: any }) {
   const [isVisible, setIsVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const lastScrollY = useRef(0);
@@ -109,8 +121,14 @@ export function Header() {
           </div>
 
           <div className="flex flex-1 justify-end md:justify-center">
-            <MobileNavigation className="pointer-events-auto md:hidden" />
-            <DesktopNavigation className="pointer-events-auto hidden md:block" />
+            <MobileNavigation
+              enableSections={enableSections}
+              className="pointer-events-auto md:hidden"
+            />
+            <DesktopNavigation
+              enableSections={enableSections}
+              className="pointer-events-auto hidden md:block"
+            />
           </div>
 
           <div className="flex justify-end">
