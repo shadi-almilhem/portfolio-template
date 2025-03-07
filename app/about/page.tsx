@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
-import Link from "next/link";
 import clsx from "clsx";
 import content from "@/app/content/content.json";
 import { Container } from "@/app/components/Container";
@@ -19,13 +18,15 @@ function SocialLink({ className, href, children, icon: Icon }: any) {
         "group flex items-center transition-all duration-300"
       )}
     >
-      <Link
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
         href={href}
         className="flex items-center text-sm font-medium text-zinc-600 transition-colors duration-300 hover:text-emerald-500 dark:text-zinc-400 dark:hover:text-emerald-500"
       >
         <Icon className="h-5 w-5 flex-none fill-zinc-500 transition-colors duration-300 group-hover:fill-emerald-500" />
         <span className="ml-3">{children}</span>
-      </Link>
+      </a>
     </li>
   );
 }
@@ -117,13 +118,13 @@ export default function About() {
                     Follow on LinkedIn
                   </SocialLink>
                   <li className="pt-4 mt-4 border-t border-zinc-100 dark:border-zinc-800">
-                    <Link
+                    <a
                       href={`mailto:${content.hero.email}`}
                       className="group flex items-center text-sm font-medium text-zinc-600 transition-colors duration-300 hover:text-emerald-500 dark:text-zinc-400 dark:hover:text-emerald-500"
                     >
                       <MailIcon className="h-5 w-5 flex-none fill-zinc-500 transition-colors duration-300 group-hover:fill-emerald-500" />
                       <span className="ml-3">{content.hero.email}</span>
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </div>

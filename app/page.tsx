@@ -1,6 +1,5 @@
 import type React from "react";
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Link } from "next-view-transitions";
 import { Container } from "@/app/components/Container";
 import {
   GitHubIcon,
@@ -32,9 +31,14 @@ function SocialLink({
   "aria-label": string;
 }) {
   return (
-    <Link className="group -m-1 p-1" {...props}>
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group -m-1 p-1"
+      {...props}
+    >
       <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
-    </Link>
+    </a>
   );
 }
 
@@ -64,7 +68,7 @@ export default async function Home() {
               <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
                 {content.hero.about}
               </p>
-              <div className="mt-6 flex gap-6 ">
+              <div className="mt-6 items-center flex gap-6 ">
                 <SocialLink
                   href={content.hero.X}
                   aria-label="Follow on X"
@@ -85,6 +89,12 @@ export default async function Home() {
                   aria-label="Follow on LinkedIn"
                   icon={LinkedInIcon}
                 />
+                <a
+                  href={"/cv.pdf"}
+                  className="text-zinc-800 flex items-center gap-2 hover:text-zinc-900 dark:hover:text-zinc-100 text-sm  dark:text-zinc-200 dark:bg-zinc-700  bg-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-600/80 transition-all duration-300 rounded-full py-2 px-4 font-medium"
+                >
+                  Download CV
+                </a>
               </div>
             </div>
           </GridBeam>

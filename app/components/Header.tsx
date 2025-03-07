@@ -62,6 +62,8 @@ function DesktopNavigation({
         {enableSections?.enableBlog && <NavItem href="/blog">Blog</NavItem>}
 
         <a
+          target="_blank"
+          rel="noopener noreferrer"
           href={"mailto:" + content.hero.email}
           className="text-zinc-800 flex items-center gap-2 hover:text-zinc-900 dark:hover:text-zinc-100  dark:text-zinc-200 dark:bg-zinc-700  bg-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-600/80 transition-all duration-300 rounded-full px-4 py1 font-semibold"
         >
