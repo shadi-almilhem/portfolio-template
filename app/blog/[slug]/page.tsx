@@ -15,7 +15,7 @@ export default async function BlogPost({
   if (!blogPage) {
     return <NotFound />;
   }
-  const { slug } = await params;
+  const { slug } = params;
   const blog = await getBlog(slug);
   console.log(blog?.date);
   if (!blog) {

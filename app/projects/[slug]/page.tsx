@@ -13,7 +13,7 @@ export default async function ProjectPost({
   if (!content.enableSections.enableProjects) {
     return <NotFound />;
   }
-  const { slug } = await params;
+  const { slug } = params;
   const project = await getProject(slug);
 
   if (!project) {
