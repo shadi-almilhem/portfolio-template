@@ -19,8 +19,8 @@ export function ThemeToggle() {
       className="group rounded-full bg-white/90 px-2 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
       onClick={() => setTheme(otherTheme)}
     >
-      <Sun className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-emerald-50 [@media(prefers-color-scheme:dark)]:stroke-emerald-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-emerald-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-emerald-600" />
-      <MoonStar className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-emerald-500 [@media_not_(prefers-color-scheme:dark)]:fill-emerald-400/10 [@media_(prefers-color-scheme:dark)]:stroke-emerald-500/80" />
+      <Sun className="h-6 w-6  transition  dark:hidden fill-emerald-50 stroke-emerald-500 group-hover:fill-emerald-50 group-hover:stroke-emerald-600" />
+      <MoonStar className="hidden h-6 w-6 group-hover:stroke-emerald-400  transition dark:block stroke-emerald-500 fill-emerald-400/10 " />
     </button>
   );
 }
