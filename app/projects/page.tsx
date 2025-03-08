@@ -23,7 +23,7 @@ export const metadata = {
 export default async function Projects({
   searchParams,
 }: {
-  searchParams: { page?: string };
+  searchParams: Promise<{ page?: string }>;
 }) {
   if (!content.enableSections.enableProjects) {
     return <NotFound />;
