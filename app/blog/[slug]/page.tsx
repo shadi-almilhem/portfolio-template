@@ -8,14 +8,14 @@ import NotFound from "@/app/not-found";
 export default async function BlogPost({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   const blogPage = content.enableSections.enableBlog;
 
   if (!blogPage) {
     return <NotFound />;
   }
-  const { slug } = params;
+  const { slug } = await params;
   const blog = await getBlog(slug);
   console.log(blog?.date);
   if (!blog) {

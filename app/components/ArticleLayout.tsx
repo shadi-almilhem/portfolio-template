@@ -1,10 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { useContext } from "react";
 import { useRouter } from "next/navigation";
 
-import { AppContext } from "@/app/providers";
 import { Container } from "@/app/components/Container";
 import { Prose } from "@/app/components/Prose";
 import { formatDate } from "@/utils/formatDate";
@@ -24,24 +22,20 @@ function ArrowLeftIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export function ArticleLayout({ article, children }: any) {
   const router = useRouter();
-  const { previousPathname = "" } = useContext(AppContext) as {
-    previousPathname?: string;
-  };
 
   return (
     <Container className="mt-16 lg:mt-32">
       <div className="xl:relative">
         <div className="mx-auto max-w-4xl pt-16">
-          {previousPathname && (
-            <button
-              type="button"
-              onClick={() => router.back()}
-              aria-label="Go back to articles"
-              className="group flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 mb-4 ring-zinc-900/5 transition  dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
-            >
-              <ArrowLeftIcon className="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
-            </button>
-          )}
+          <button
+            type="button"
+            onClick={() => router.back()}
+            aria-label="Go back to articles"
+            className="group flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 mb-4 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
+          >
+            <ArrowLeftIcon className="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
+          </button>
+
           <article>
             <header className="flex flex-col">
               <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 md:text-5xl dark:text-zinc-100">

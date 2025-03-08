@@ -8,12 +8,12 @@ import content from "@/app/content/content.json";
 export default async function ProjectPost({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   if (!content.enableSections.enableProjects) {
     return <NotFound />;
   }
-  const { slug } = params;
+  const { slug } = await params;
   const project = await getProject(slug);
 
   if (!project) {
