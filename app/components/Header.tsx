@@ -4,7 +4,7 @@
 import type React from "react";
 
 import { useEffect, useRef, useState } from "react";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import content from "@/app/content/content.json";
 import clsx from "clsx";

@@ -5,7 +5,7 @@ import {
   PopoverPanel,
 } from "@headlessui/react";
 import { ChevronDown, X } from "lucide-react";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import content from "@/app/content/content.json";
 
 // Define the type for enableSections

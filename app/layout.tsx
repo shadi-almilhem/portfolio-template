@@ -3,7 +3,6 @@ import "./globals.css";
 import { Providers } from "@/app/providers";
 import { Layout } from "@/app/components/Layout";
 import { DM_Sans } from "next/font/google";
-import { ViewTransitions } from "next-view-transitions";
 import content from "@/app/content/content.json";
 const dm_sans = DM_Sans({
   subsets: ["latin"],
@@ -48,22 +47,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ViewTransitions>
-      <html
-        lang="en"
-        className={`h-full tracking-tight antialiased `}
-        suppressHydrationWarning
+    <html
+      lang="en"
+      className={`h-full tracking-tight antialiased `}
+      suppressHydrationWarning
+    >
+      <body
+        className={`flex h-full bg-zinc-50 dark:bg-black ${dm_sans.className}`}
       >
-        <body
-          className={`flex h-full bg-zinc-50 dark:bg-black ${dm_sans.className}`}
-        >
-          <Providers>
-            <div className="flex w-full">
-              <Layout>{children}</Layout>
-            </div>
-          </Providers>
-        </body>
-      </html>
-    </ViewTransitions>
+        <Providers>
+          <div className="flex w-full">
+            <Layout>{children}</Layout>
+          </div>
+        </Providers>
+      </body>
+    </html>
   );
 }

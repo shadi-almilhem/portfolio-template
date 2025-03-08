@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import clsx from "clsx";
 
 const variantStyles = {

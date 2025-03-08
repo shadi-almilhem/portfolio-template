@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 
 interface PaginationProps {
   totalPages: number;

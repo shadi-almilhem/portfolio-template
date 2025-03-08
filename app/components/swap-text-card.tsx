@@ -2,7 +2,7 @@
 import { ArrowUpRight } from "lucide-react";
 import SwapText from "./swap-text";
 import Image from "next/image";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 
 interface FlipTextCardProps {
   initialText: string; // This will be the project name
