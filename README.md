@@ -1,6 +1,6 @@
 # Modern Portfolio Website
 
-![Portfolio Preview](https://i.imgur.com/1V2oaMf.png)
+![Portfolio Preview](https://i.imgur.com/k396ljX.png)
 
 A customizable portfolio website built with Next.js 15.2, TypeScript, Tailwind CSS v4, and Sanity CMS. Perfect for developers, designers, and creatives looking to showcase their work in a modern, responsive format.
 
@@ -44,14 +44,14 @@ A customizable portfolio website built with Next.js 15.2, TypeScript, Tailwind C
 
 ## Demo
 
-View the demo: [https://modern-portfolio-demo.vercel.app](https://your-demo-link.com)
+View the demo: [https://portfolio-template-shadi.vercel.app/](https://portfolio-template-shadi.vercel.app/)
 
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
 
 - **Node.js** (v18.0.0 or higher): [Download Node.js](https://nodejs.org/)
-- **npm** (v8.0.0 or higher, comes with Node.js) or **yarn** (v1.22.0 or higher): [Install Yarn](https://yarnpkg.com/getting-started/install)
+- **npm** (v8.0.0 or higher, comes with Node.js)
 - **Git** (for version control): [Download Git](https://git-scm.com/downloads)
 
 You'll also need:
@@ -66,16 +66,14 @@ You'll also need:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/modern-portfolio.git
-cd modern-portfolio
+git clone https://github.com/shadi-almilhem/portfolio-template.git
+cd portfolio-template
 ```
 
 2. Install dependencies:
 
 ```bash
 npm install
-# or
-yarn install
 ```
 
 ### Environment Variables
@@ -85,7 +83,6 @@ Create a `.env.local` file in the root directory with the following variables:
 ```
 NEXT_PUBLIC_SANITY_PROJECT_ID=your_sanity_project_id
 NEXT_PUBLIC_SANITY_DATASET=production
-NEXT_PUBLIC_SANITY_API_VERSION=2024-03-09
 ```
 
 ### Sanity Setup
@@ -101,7 +98,6 @@ NEXT_PUBLIC_SANITY_API_VERSION=2024-03-09
 ```
 NEXT_PUBLIC_SANITY_PROJECT_ID=your_sanity_project_id
 NEXT_PUBLIC_SANITY_DATASET=production
-NEXT_PUBLIC_SANITY_API_VERSION=2024-03-09
 ```
 
 5. The project already includes Sanity Studio at the route `/studio`. After setting up your environment variables, you can access your studio at `http://localhost:3000/studio`.
@@ -227,29 +223,7 @@ vercel
 
 ### Styling
 
-This project uses Tailwind CSS v4 for styling. You can customize the theme by editing the `tailwind.config.js` file:
-
-```js
-// tailwind.config.js
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        primary: {
-          50: "#f0f9ff",
-          // Add your custom colors here
-        },
-        // Add more custom colors
-      },
-      fontFamily: {
-        // Add custom fonts
-      },
-      // Add other theme customizations
-    },
-  },
-  // Other config options
-};
-```
+This project uses Tailwind CSS v4 for styling.
 
 ### Adding Your Resume/CV
 
@@ -337,26 +311,26 @@ portfolio/
    └─ ... other config files
 ```
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0) - which means you are free to:
+
+- Share — copy and redistribute the material in any medium or format
+- Adapt — remix, transform, and build upon the material
+
+Under the following terms:
+
+- Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+- NonCommercial — You may not use the material for commercial purposes.
+
+For more details: [Creative Commons BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
 
 ## Contact
 
 Shadi Al Milhem - [almilhemshadi@gmail.com](mailto:almilhemshadi@gmail.com)
 
-Project Link: [https://github.com/yourusername/modern-portfolio](https://github.com/yourusername/modern-portfolio)
+Project Link: [https://github.com/shadi-almilhem/portfolio-template](https://github.com/shadi-almilhem/portfolio-template)
 
 ---
 
-Made with ❤️ by [Shadi Al Milhem](https://github.com/shadi_m02)
+Made with ❤️ by [Shadi Al Milhem](https://shadialmilhem.com)
