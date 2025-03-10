@@ -28,7 +28,7 @@ export default function Role({ role, index = 0 }: any) {
 
   // Get color based on index or some property of the role
   const dotColor = colors[(index * 2 + 1) % colors.length];
-
+  console.log(role);
   return (
     <li
       className={`relative pl-5 before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full ${dotColor}`}
@@ -53,11 +53,17 @@ export default function Role({ role, index = 0 }: any) {
         <dt className="sr-only">Date</dt>
         <dd
           className="ml-auto mt-1 text-xs font-medium text-zinc-400 dark:text-zinc-500"
-          aria-label={`${role.startDate} until ${role.endDate}`}
+          aria-label={`${role.startDate} until ${role.isCurrentPosition ? "present" : role.endDate}`}
         >
-          <time dateTime={role.startDate}>{role.startDate}</time>{" "}
-          <span aria-hidden="true">—</span>{" "}
-          <time dateTime={role.endDate}>{role.endDate}</time>
+          <time dateTime={role.startDate}>{role.startDate}</time>
+          {"  "}
+          <span aria-hidden="true"> — </span>
+          {"  "}
+          {role.isCurrentPosition ? (
+            <span>Present</span>
+          ) : (
+            <time dateTime={role.endDate}>{role.endDate}</time>
+          )}
         </dd>
       </dl>
     </li>

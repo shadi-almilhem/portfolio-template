@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "/", // Canonical URL
+    canonical: "https://portfolio-template-shadi.vercel.app/",
   },
 };
 export default function RootLayout({
