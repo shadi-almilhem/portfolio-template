@@ -1,4 +1,4 @@
-# Modern Portfolio Website
+# Portfolio Website Using Next.js, TypeScript, Tailwind CSS v4, and Sanity CMS
 
 ![Portfolio Preview](https://i.imgur.com/k396ljX.png)
 
