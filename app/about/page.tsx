@@ -102,21 +102,32 @@ export default function About() {
               {/* Social links with simplified design */}
               <div className="w-full">
                 <ul role="list" className="flex flex-col space-y-3">
-                  <SocialLink href={content.hero.X} icon={XIcon}>
-                    Follow on X
-                  </SocialLink>
-                  <SocialLink
-                    href={content.hero.Instagram}
-                    icon={InstagramIcon}
-                  >
-                    Follow on Instagram
-                  </SocialLink>
-                  <SocialLink href={content.hero.GitHub} icon={GitHubIcon}>
-                    Follow on GitHub
-                  </SocialLink>
-                  <SocialLink href={content.hero.LinkedIn} icon={LinkedInIcon}>
-                    Follow on LinkedIn
-                  </SocialLink>
+                  {content.hero.X && (
+                    <SocialLink href={content.hero.X} icon={XIcon}>
+                      Follow on X
+                    </SocialLink>
+                  )}
+                  {content.hero.Instagram && (
+                    <SocialLink
+                      href={content.hero.Instagram}
+                      icon={InstagramIcon}
+                    >
+                      Follow on Instagram
+                    </SocialLink>
+                  )}
+                  {content.hero.GitHub && (
+                    <SocialLink href={content.hero.GitHub} icon={GitHubIcon}>
+                      Follow on GitHub
+                    </SocialLink>
+                  )}
+                  {content.hero.LinkedIn && (
+                    <SocialLink
+                      href={content.hero.LinkedIn}
+                      icon={LinkedInIcon}
+                    >
+                      Follow on LinkedIn
+                    </SocialLink>
+                  )}
                   <li className="pt-4 mt-4 border-t border-zinc-100 dark:border-zinc-800">
                     <a
                       href={`mailto:${content.hero.email}`}

@@ -69,29 +69,37 @@ export default async function Home() {
                 {content.hero.about}
               </p>
               <div className="mt-6 items-center flex gap-6 ">
-                <SocialLink
-                  href={content.hero.X}
-                  aria-label="Follow on X"
-                  icon={XIcon}
-                />
-                <SocialLink
-                  href={content.hero.Instagram}
-                  aria-label="Follow on Instagram"
-                  icon={InstagramIcon}
-                />
-                <SocialLink
-                  href={content.hero.GitHub}
-                  aria-label="Follow on GitHub"
-                  icon={GitHubIcon}
-                />
-                <SocialLink
-                  href={content.hero.LinkedIn}
-                  aria-label="Follow on LinkedIn"
-                  icon={LinkedInIcon}
-                />
+                {content.hero.X && (
+                  <SocialLink
+                    href={content.hero.X}
+                    aria-label="Follow on X"
+                    icon={XIcon}
+                  />
+                )}
+                {content.hero.Instagram && (
+                  <SocialLink
+                    href={content.hero.Instagram}
+                    aria-label="Follow on Instagram"
+                    icon={InstagramIcon}
+                  />
+                )}
+                {content.hero.GitHub && (
+                  <SocialLink
+                    href={content.hero.GitHub}
+                    aria-label="Follow on GitHub"
+                    icon={GitHubIcon}
+                  />
+                )}
+                {content.hero.LinkedIn && (
+                  <SocialLink
+                    href={content.hero.LinkedIn}
+                    aria-label="Follow on LinkedIn"
+                    icon={LinkedInIcon}
+                  />
+                )}
                 <a
                   href={"/cv.pdf"}
-                  className="text-zinc-800 flex items-center gap-2 hover:text-zinc-900 dark:hover:text-zinc-100 text-sm  dark:text-zinc-200 dark:bg-zinc-700  bg-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-600/80 transition-all duration-300 rounded-full py-2 px-4 font-medium"
+                  className="text-zinc-800 flex items-center gap-2 hover:text-zinc-900 dark:hover:text-zinc-100 text-sm dark:text-zinc-200 dark:bg-zinc-700 bg-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-600/80 transition-all duration-300 rounded-full py-2 px-4 font-medium"
                 >
                   Download CV
                 </a>

@@ -28,7 +28,6 @@ export default function Role({ role, index = 0 }: any) {
 
   // Get color based on index or some property of the role
   const dotColor = colors[(index * 2 + 1) % colors.length];
-  console.log(role);
   return (
     <li
       className={`relative pl-5 before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full ${dotColor}`}
