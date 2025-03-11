@@ -1,6 +1,7 @@
 {
   "name": "Shadi Al Milhem",
   "roleDescription": "Web designer and developer specializing in modern web experiences.",
+  "siteUrl": "https://portfolio-template-shadi.vercel.app/",
   "hero": {
     "jobTitle": "Web Designer",
     "about": "I'm Shadi, I bridge design and technology to create seamless web experiences. Focused on responsive design, performance optimization, and clean code architecture.",

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "@/app/providers";
-import { Layout } from "@/app/components/Layout";
+import { Layout } from "@/components/Layout";
 import { DM_Sans } from "next/font/google";
 import content from "@/app/content/content.json";
 const dm_sans = DM_Sans({
@@ -16,6 +16,8 @@ const dm_sans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(content.siteUrl),
+
   title: `${content.name} - ${content.roleDescription}`,
   description: `${content.name}, ${content.roleDescription}. Explore my portfolio, blog, and learn more about my skills.`,
   keywords: `${content.name}, ${content.roleDescription}, portfolio, blog, skills, web development, web design`,
@@ -39,7 +41,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://portfolio-template-shadi.vercel.app/",
+    canonical: content.siteUrl,
   },
 };
 export default function RootLayout({

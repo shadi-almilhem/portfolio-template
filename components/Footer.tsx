@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Link from "next/link";
 
-import { ContainerInner, ContainerOuter } from "@/app/components/Container";
+import { ContainerInner, ContainerOuter } from "@/components/Container";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function NavLink({ href, children }: any) {
   return (

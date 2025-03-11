@@ -1,6 +1,6 @@
 "use client";
-import { Footer } from "@/app/components/Footer";
-import { Header } from "@/app/components/Header";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 import { usePathname } from "next/navigation";
 import content from "@/app/content/content.json";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

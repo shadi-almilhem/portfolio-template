@@ -3,8 +3,8 @@
 
 import { useRouter } from "next/navigation";
 
-import { Container } from "@/app/components/Container";
-import { Prose } from "@/app/components/Prose";
+import { Container } from "@/components/Container";
+import { Prose } from "@/components/Prose";
 import { formatDate } from "@/utils/formatDate";
 
 function ArrowLeftIcon(props: React.SVGProps<SVGSVGElement>) {

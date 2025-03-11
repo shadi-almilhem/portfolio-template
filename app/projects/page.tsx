@@ -1,8 +1,8 @@
-import { SimpleLayout } from "@/app/components/SimpleLayout";
-import SwapTextCard from "../components/swap-text-card";
+import { SimpleLayout } from "@/components/SimpleLayout";
+import SwapTextCard from "../../components/swap-text-card";
 import { getAllProjects } from "@/utils/sanity-queries";
-import BlurFade from "../components/blur-fade";
-import Pagination from "@/app/components/pagination";
+import BlurFade from "../../components/blur-fade";
+import Pagination from "@/components/pagination";
 import { Suspense } from "react";
 import content from "@/app/content/content.json";
 import NotFound from "../not-found";

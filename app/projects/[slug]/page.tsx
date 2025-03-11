@@ -1,5 +1,5 @@
-import { ArticleLayout } from "@/app/components/ArticleLayout";
-import { PortableTextComponent } from "@/app/components/PortableTextComponent";
+import { ArticleLayout } from "@/components/ArticleLayout";
+import { PortableTextComponent } from "@/components/PortableTextComponent";
 import NotFound from "@/app/not-found";
 import { getProject } from "@/utils/sanity-queries";
 import { PortableText } from "next-sanity";

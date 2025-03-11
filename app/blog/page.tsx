@@ -1,8 +1,8 @@
-import { SimpleLayout } from "@/app/components/SimpleLayout";
-import BlogCard from "@/app/components/blog-card";
+import { SimpleLayout } from "@/components/SimpleLayout";
+import BlogCard from "@/components/blog-card";
 import { getAllBlogs } from "@/utils/sanity-queries";
-import BlurFade from "../components/blur-fade";
-import Pagination from "@/app/components/pagination";
+import BlurFade from "../../components/blur-fade";
+import Pagination from "@/components/pagination";
 import { Suspense } from "react";
 import content from "@/app/content/content.json";
 import NotFound from "../not-found";

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Container } from "@/app/components/Container";
+import { Container } from "@/components/Container";
 
 export function SimpleLayout({ title, intro, children }: any) {
   return (

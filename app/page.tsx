@@ -1,12 +1,12 @@
 import type React from "react";
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Container } from "@/app/components/Container";
+import { Container } from "@/components/Container";
 import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
   XIcon,
-} from "@/app/components/SocialIcons";
+} from "@/components/SocialIcons";
 import content from "@/app/content/content.json";
 import {
   getAllBlogs,
@@ -14,13 +14,13 @@ import {
   getAllExperiences,
   getAllProjects,
 } from "@/utils/sanity-queries";
-import BlurFade from "./components/blur-fade";
-import { GridBeam } from "./components/GridBeam";
-import SwapTextCard from "./components/swap-text-card";
-import Experience from "./components/Resume";
-import BlogCard from "./components/blog-card";
-import Certifications from "./components/Certifications";
-import SkillsSection from "./components/Skills";
+import BlurFade from "../components/blur-fade";
+import { GridBeam } from "../components/GridBeam";
+import SwapTextCard from "../components/swap-text-card";
+import Experience from "../components/Resume";
+import BlogCard from "../components/blog-card";
+import Certifications from "../components/Certifications";
+import SkillsSection from "../components/Skills";
 
 function SocialLink({
   icon: Icon,

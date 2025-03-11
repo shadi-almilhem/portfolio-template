@@ -2,14 +2,14 @@
 import Image from "next/image";
 import clsx from "clsx";
 import content from "@/app/content/content.json";
-import { Container } from "@/app/components/Container";
+import { Container } from "@/components/Container";
 import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
   XIcon,
-} from "@/app/components/SocialIcons";
-import BlurFade from "../components/blur-fade";
+} from "@/components/SocialIcons";
+import BlurFade from "../../components/blur-fade";
 function SocialLink({ className, href, children, icon: Icon }: any) {
   return (
     <li

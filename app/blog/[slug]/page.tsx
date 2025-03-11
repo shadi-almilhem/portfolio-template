@@ -1,5 +1,5 @@
-import { ArticleLayout } from "@/app/components/ArticleLayout";
-import { PortableTextComponent } from "@/app/components/PortableTextComponent";
+import { ArticleLayout } from "@/components/ArticleLayout";
+import { PortableTextComponent } from "@/components/PortableTextComponent";
 import { getBlog } from "@/utils/sanity-queries";
 import { PortableText } from "@portabletext/react";
 import React from "react";

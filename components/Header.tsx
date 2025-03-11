@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 import content from "@/app/content/content.json";
 import clsx from "clsx";
 
-import { Container } from "@/app/components/Container";
+import { Container } from "@/components/Container";
 import Avatar from "./Avatar";
 import { MobileNavigation } from "./mobile-nav";
 import { ThemeToggle } from "./ThemeToggle";
