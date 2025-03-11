@@ -22,9 +22,11 @@ A customizable portfolio website built with Next.js 15.2, TypeScript, Tailwind C
   - [Deploying with GitHub](#deploying-with-github)
 - [Customization](#customization)
   - [Styling](#styling)
+  - [Adding Your Resume/CV](#adding-your-resumecv)
+  - [Logo/Brand](#logobrand)
+  - [Replacing Portrait](#replacing-portrait)
   - [Sections](#sections)
 - [Project Structure](#project-structure)
-- [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 
@@ -143,6 +145,20 @@ Edit the `content.json` file located in the `app/content` directory to update yo
 }
 ```
 
+#### Social Media Links
+
+When configuring your social media links in `content.json`, you can leave any platform you don't use as an empty string:
+
+```json
+"hero": {
+  "X": "",  // Leave empty if you don't have an X/Twitter account
+  "Instagram": "https://www.instagram.com/yourusername",
+  "GitHub": "https://www.github.com/yourusername",
+  "LinkedIn": "", // Leave empty if you don't have a LinkedIn account
+  "email": "your.email@example.com"
+}
+```
+
 ### Content Management
 
 Use Sanity Studio to manage the following content types:
@@ -232,12 +248,25 @@ To add your resume or CV:
 1. Replace the `cv.pdf` file in the `public` directory with your own resume/CV file
 2. If you use a different filename, update the reference in the relevant component
 
-### Replacing Avatar/Portrait
+### Logo/Brand
 
-To customize your profile picture:
+The site uses `logo.png` in the `public` directory for branding. Replace this file with your own logo while keeping the same filename.
 
-1. Replace the `avatar.png`, `portrait.jpg`, and `portrait.webp` files in the `public` directory with your own images
-2. Keep the same filenames or update the references in the components
+### Replacing Portrait
+
+The about page uses a responsive image with multiple formats. To update your profile image:
+
+1. Replace the following files in the `public` directory:
+
+   - `portrait.webp` (preferred for best performance)
+   - `portrait.jpg` (fallback)
+   - `portrait.png` (additional fallback)
+
+2. Use the same filenames to ensure compatibility with the existing components
+
+For optimal performance, we recommend using WebP format as your primary image format, but the system includes fallbacks for broader compatibility.
+
+Note: If you only have one image file, convert it to WebP format for best performance using an online converter like [Convertio](https://convertio.co/jpg-webp/).
 
 ### Sections
 

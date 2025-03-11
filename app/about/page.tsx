@@ -67,9 +67,9 @@ export default function About() {
                 {content.about.heading}
               </h1>
               <picture>
+                <source srcSet="/portrait.webp" type="image/webp" />
                 <source srcSet="/portrait.jpg" type="image/jpeg" />
 
-                <source srcSet="/portrait.webp" type="image/webp" />
                 <source srcSet="/portrait.png" type="image/png" />
                 <Image
                   src="/portrait.jpg"

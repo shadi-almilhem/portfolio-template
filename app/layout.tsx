@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${content.name} - ${content.roleDescription}`,
     description: `${content.name}, ${content.roleDescription}. Explore my portfolio, blog, and learn more about my skills.`,
+    images: { url: "/logo.png", alt: "My Image Alt Text" },
     siteName: `${content.name}`,
     locale: "en_US",
     type: "website",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      "max-image-preview": "large", // Improve image previews
+      "max-image-preview": "large",
     },
   },
 
