@@ -116,6 +116,7 @@ Edit the `content.json` file located in the `app/content` directory to update yo
 {
   "name": "Your Name",
   "roleDescription": "Your role description",
+  "siteUrl": "https://portfolio-template-shadi.vercel.app/",
   "hero": {
     "jobTitle": "Your Job Title",
     "about": "Brief description about yourself",
@@ -226,6 +227,7 @@ vercel
    - Go to your project on the Vercel dashboard
    - Navigate to Settings > Environment Variables
    - Add the same variables from your `.env.local` file
+   - edit the `siteUrl` in `content.json` to match your Vercel project URL
 
 ### Deploying with GitHub
 
@@ -292,17 +294,6 @@ portfolio/
    │  ├─ blog/                  # Blog pages
    │  │  ├─ [slug]/             # Dynamic blog post pages
    │  │  └─ page.tsx            # Blog listing page
-   │  ├─ components/            # React components
-   │  │  ├─ ArticleLayout.tsx   # Layout for articles
-   │  │  ├─ Avatar.tsx          # Profile avatar component
-   │  │  ├─ blog-card.tsx       # Card for blog posts
-   │  │  ├─ Button.tsx          # Reusable button component
-   │  │  ├─ CertificationItem.tsx # Single certification item
-   │  │  ├─ Certifications.tsx  # Certifications section
-   │  │  ├─ Footer.tsx          # Site footer
-   │  │  ├─ Header.tsx          # Site header
-   │  │  ├─ ThemeToggle.tsx     # Dark/light mode toggle
-   │  │  └─ ... other components
    │  ├─ content/               # Static content
    │  │  └─ content.json        # Basic information
    │  ├─ projects/              # Projects pages
@@ -313,6 +304,17 @@ portfolio/
    │  ├─ globals.css            # Global styles
    │  ├─ layout.tsx             # Root layout
    │  └─ page.tsx               # Home page
+   ├─ components/            # React components
+   │  ├─ ArticleLayout.tsx   # Layout for articles
+   │  ├─ Avatar.tsx          # Profile avatar component
+   │  ├─ blog-card.tsx       # Card for blog posts
+   │  ├─ Button.tsx          # Reusable button component
+   │  ├─ CertificationItem.tsx # Single certification item
+   │  ├─ Certifications.tsx  # Certifications section
+   │  ├─ Footer.tsx          # Site footer
+   │  ├─ Header.tsx          # Site header
+   │  ├─ ThemeToggle.tsx     # Dark/light mode toggle
+   │  └─ ... other components
    ├─ public/                   # Static files
    │  ├─ logo.png               # Logo Image
    │  ├─ cv.pdf                 # Your resume/CV
