@@ -314,9 +314,10 @@ portfolio/
    │  ├─ layout.tsx             # Root layout
    │  └─ page.tsx               # Home page
    ├─ public/                   # Static files
-   │  ├─ avatar.png             # Profile avatar
+   │  ├─ logo.png               # Logo Image
    │  ├─ cv.pdf                 # Your resume/CV
-   │  ├─ portrait.jpg           # Profile portrait
+   │  ├─ portrait.webp          # Profile portrait
+   │  ├─ portrait.jpg           # Profile portrait (fallback)
    │  └─ ... other assets
    ├─ sanity/                   # Sanity configuration
    │  ├─ lib/                   # Sanity utility functions
