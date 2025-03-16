@@ -47,7 +47,11 @@ export function Providers({ children }: any) {
 
   return (
     <AppContext.Provider value={{ previousPathname }}>
-      <ThemeProvider attribute="class" disableTransitionOnChange>
+      <ThemeProvider
+        attribute="class"
+        disableTransitionOnChange
+        defaultTheme="system"
+      >
         <ThemeWatcher />
         {children}
       </ThemeProvider>
